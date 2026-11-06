@@ -1,0 +1,6 @@
+node_modules/
+dist/
+.upstream-source/
+.env
+.env.*
+!.env.example

@@ -1,0 +1,35 @@
+{
+  "仓库": "https://github.com/arhamkhnz/next-shadcn-admin-dashboard",
+  "提交": "036631eb6896817649272fe79ded8c80faa709ee",
+  "核对日期": "2026-11-06",
+  "许可": "MIT",
+  "原始文件SHA256": {
+    "src/app/(main)/dashboard/kanban/_components/kanban.tsx": "2256893faaf40c6c33106e767027a99720843d1d6616aa2b7ab2242f69bca744",
+    "src/app/(main)/dashboard/kanban/_components/kanban-column.tsx": "1323810c03d5e25c3f390098177a40e735fd8c348b6d345551107d4fd86ab883",
+    "src/app/(main)/dashboard/kanban/_components/sortable-task-card.tsx": "880c2dde0ce5bf11d00dad88ccff689752840078785489e44a0423c0db3ff0cb",
+    "src/app/(main)/dashboard/kanban/_components/task-card.tsx": "2db9a7d62c791a6f41be376e4069d605b3f3f5c11ad9cc2b0905e077cb9492ca",
+    "src/app/(main)/dashboard/kanban/_components/task-priority.ts": "8f3e04d096ca99ff582ad83ea2b0ffaec9231dbb02d668010f9d2c5c6b1c809e",
+    "src/app/(main)/dashboard/kanban/_components/types.ts": "01890141324da5cda8f4cbe846728bc04b68b1749c0fe569325cd1425c75bfb5",
+    "src/components/ui/avatar.tsx": "036b8f39d9f42962a9eedd097103c90450d58a50ea55c693896c4cea4b5953a4",
+    "src/components/ui/badge.tsx": "59953420d01d23d172b4e32583426db153ff09226e2d460d53526b9f25282801",
+    "src/components/ui/button.tsx": "08e5f87833c5db8436e89337ebde0f776bcdbf649d3de69fb89be6441ca2e366",
+    "src/components/ui/separator.tsx": "b5b5460e5337c2d5f361c1512001615b2e5eacb38c7449a4418bb9ddb47c4bba",
+    "src/app/globals.css": "98adf464d8bca02d85ce759f123bc5eea7dbf05d126054be8749c0bbb039a25c",
+    "LICENSE": "d4f2f6115637639342e10780a8c4ebf4ea54239662aa362554ede12fe1d0beaa"
+  },
+  "视觉参考": "https://studio-admin.arhamkhnz.com/dashboard/kanban",
+  "方式": "保留原始相关文件副本，原样复用三个基础组件；Kanban拖放处理和卡片/列布局做最小静态化与中文适配。",
+  "实际复用文件": [
+    "src/components/ui/avatar.tsx",
+    "src/components/ui/badge.tsx",
+    "src/components/ui/separator.tsx",
+    "src/kanban/task-priority.ts"
+  ],
+  "适配文件": {
+    "src/kanban/kanban.tsx": "提取原kanban.tsx的事件数据校验、DragDropProvider、move()、DragOverlay；移除Next路由与列表/表格视图，状态接入可独立复现的内存store。",
+    "src/kanban/task-card.tsx": "保留原卡片结构、标题/优先级/描述/头像/日期布局；中文化并删除虚构附件评论统计和无用进度字段。",
+    "src/kanban/kanban-column.tsx": "保留原droppable容器和卡片排序；省去列自身重排和未接通的新增菜单。",
+    "src/kanban/sortable-task-card.tsx": "保留原useSortable参数和拖放ref，补中文可访问名称。",
+    "src/theme.css": "保留原默认中性色主题变量与Tailwind映射，省去额外主题/Next字体依赖。"
+  }
+}

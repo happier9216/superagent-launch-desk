@@ -1,0 +1,52 @@
+@import './theme.css';
+
+* { box-sizing: border-box; border-color: var(--border); }
+html, body, #root { margin: 0; min-height: 100%; }
+:root { --font-geist: 'Helvetica Neue', 'PingFang SC', sans-serif; --font-geist-mono: 'SFMono-Regular', Consolas, monospace; }
+body { color: var(--foreground); background: var(--background); font-family: 'Helvetica Neue', 'PingFang SC', 'Microsoft YaHei', sans-serif; -webkit-font-smoothing: antialiased; }
+button, a { -webkit-tap-highlight-color: transparent; }
+.launch-shell { display: flex; min-height: 100dvh; }
+.launch-sidebar { width: 210px; flex-shrink: 0; display: flex; flex-direction: column; padding: 24px 14px 16px; border-right: 1px solid var(--border); background: #fafafa; }
+.launch-brand { display: flex; align-items: center; gap: 10px; padding: 0 8px 25px; font-size: 15px; font-weight: 650; letter-spacing: -.4px; }
+.launch-brand > span { display: grid; place-items: center; width: 31px; height: 31px; color: white; background: #17181c; border-radius: 9px; }
+.launch-brand small { display: block; margin-top: 3px; font-size: 12px; font-weight: 400; color: #8b8d93; letter-spacing: 1px; }
+.launch-workspace { display: flex; align-items: center; gap: 9px; padding: 12px 10px; margin-bottom: 26px; background: white; border: 1px solid #e7e7e9; border-radius: 9px; box-shadow: 0 1px 3px #00000003; font-size: 12px; font-weight: 550; }
+.workspace-symbol { display: grid; place-items: center; width: 29px; height: 29px; background: #f4f4f6; border: 1px solid #e9e9ed; border-radius: 7px; font-size: 12px; font-weight: 650; }
+.launch-workspace small { display: block; margin-top: 3px; font-size: 12px; font-weight: 400; color: #8f9299; }
+.launch-workspace > svg { margin-left: auto; color: #94969d; }
+.launch-nav-label { padding: 0 10px 9px; color: #94969d; font-size: 12px; letter-spacing: 1px; }
+.launch-nav-item { display: flex; align-items: center; gap: 10px; padding: 10px 11px; border-radius: 7px; color: #2e3035; background: #ededf0; font-size: 12px; font-weight: 550; text-decoration: none; }
+.launch-nav-item > span { margin-left: auto; color: #777a81; font-size: 12px; }
+.launch-sidebar-note { margin-top: auto; padding: 30px 10px 22px; color: #a0a2a8; font-size: 12px; }
+.sidebar-note-line { display: block; width: 24px; height: 2px; background: #c7c9d0; margin-bottom: 13px; }
+.launch-sidebar-footer { display: flex; align-items: center; gap: 9px; padding: 14px 7px 0; border-top: 1px solid #e8e8ea; font-size: 12px; }
+.launch-sidebar-footer small { display: block; margin-top: 3px; color: #9a9ca2; font-size: 12px; }
+.launch-sidebar-footer > svg { margin-left: auto; color: #a0a2a8; }
+.launch-main { display: flex; flex: 1; min-width: 0; flex-direction: column; }
+.launch-topbar { height: 58px; flex-shrink: 0; display: flex; align-items: center; justify-content: space-between; padding: 0 30px; border-bottom: 1px solid var(--border); font-size: 12px; color: #7b7e86; }
+.launch-breadcrumb { display: flex; align-items: center; gap: 14px; }
+.launch-breadcrumb > span { width: 1px; height: 16px; background: #e6e6e8; margin: 0 2px; }
+.launch-breadcrumb small { color: #c7c9ce; font-size: 13px; font-weight: 300; }
+.launch-breadcrumb strong { color: #41434a; font-weight: 500; }
+.launch-topbar a { display: flex; align-items: center; gap: 4px; color: #7b7e86; text-decoration: none; }
+.launch-project-heading { display: flex; align-items: center; justify-content: space-between; gap: 28px; padding: 31px 32px 28px; }
+.project-eyebrow { color: #95979f; font-size: 12px; letter-spacing: 1.2px; margin-bottom: 10px; }
+.launch-project-heading h1 { margin: 0; color: #1c1d22; font-size: 29px; font-weight: 600; letter-spacing: -1.1px; line-height: 1.2; }
+.launch-project-heading h1 span { display: inline-flex; vertical-align: middle; font-size: 12px; font-weight: 500; letter-spacing: .2px; border: 1px solid #e1e2e6; border-radius: 5px; padding: 3px 6px; margin-left: 6px; color: #7f828b; }
+.launch-project-heading p { margin: 10px 0 0; color: #92949c; font-size: 14px; line-height: 1.7; }
+.launch-progress { width: 150px; flex-shrink: 0; padding-top: 16px; color: #9b9da5; font-size: 12px; }
+.launch-progress strong { color: #4d5059; font-size: 12px; font-weight: 550; }
+.launch-progress-track { height: 4px; background: #ededf0; border-radius: 9px; margin-top: 10px; overflow: hidden; }
+.launch-progress-track > div { height: 100%; background: #464a54; border-radius: inherit; transition: width .2s; }
+.launch-board-toolbar { display: flex; align-items: center; justify-content: space-between; padding: 0 32px; border-bottom: 1px solid #ededf0; }
+.launch-board-tab { position: relative; display: block; padding: 11px 1px; color: #454851; font-size: 12px; font-weight: 550; }
+.launch-board-tab::after { content: ''; height: 2px; position: absolute; bottom: -1px; left: 0; right: 0; background: #3d414b; border-radius: 2px 2px 0 0; }
+.launch-board-hint { color: #b0b2b9; font-size: 12px; }
+.launch-board-scroll { flex: 1; min-height: 0; padding: 23px 26px 26px; background: #fcfcfd; overflow-x: auto; }
+.launch-board-grid { display: grid; grid-template-columns: repeat(4, minmax(220px, 1fr)); min-width: 928px; gap: 16px; min-height: 440px; height: 100%; }
+.launch-column { background: #f5f5f7; border-color: #e8e8ed; }
+.launch-task-card { min-height: 171px; box-shadow: 0 1px 3px #1c213006; border-color: #e5e6eb; transition: box-shadow .18s, border-color .18s; }
+.launch-task-card:hover { border-color: #d3d6df; box-shadow: 0 4px 12px #1c213009; }
+.launch-footer { display: flex; justify-content: space-between; gap: 20px; padding: 15px 30px; color: #b4b6bc; border-top: 1px solid #ededf0; font-size: 12px; }
+@media (max-width: 1000px) { .launch-sidebar { width: 180px; } .launch-project-heading { padding-inline: 24px; } .launch-board-scroll { padding-inline: 20px; } }
+@media (max-width: 700px) { .launch-sidebar { display: none; } .launch-topbar { padding-inline: 20px; } .launch-project-heading { align-items: start; padding: 25px 20px; } .launch-project-heading h1 { font-size: 25px; } .launch-progress { width: 78px; } .launch-project-heading p { max-width: 210px; } .launch-board-toolbar { padding-inline: 20px; } .launch-board-scroll { padding-inline: 16px; } .launch-board-grid { min-width: 944px; min-height: 480px; } .launch-footer { padding-inline: 20px; font-size: 12px; } .launch-footer > span:first-child { display: none; } }
